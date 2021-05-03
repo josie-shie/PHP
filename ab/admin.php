@@ -139,6 +139,8 @@ $page = $page < 1 ? 1 : $page;
             </tfoot>
 
         </table>
+        <input type="submit" name="smb" value="刪除">
+    </form>    
 </body>
 
 </html>
