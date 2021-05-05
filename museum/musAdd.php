@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>新增管別</title>
+        <title>新增館別</title>
         <style>
             .border {
                 border: 1px solid;
