@@ -24,8 +24,8 @@ require_once('./db.inc.php');
         <tbody>
         <?php
         //SQL 敘述
-        $sql = "SELECT`id`,`museumId`, `museumName`
-                FROM `musum` 
+        $sql = "SELECT `id`,`museumId`, `museumName`
+                FROM `museum` 
                 WHERE `id` = ?";
 
         //設定繫結值

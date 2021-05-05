@@ -15,7 +15,7 @@ $arr = [
 
 $pdo_stmt = $pdo->prepare($sql);
 $pdo_stmt->execute($arr);
-if($pdo_stmt->rowCount() === 1) {
+if($pdo_stmt->rowCount() > 0 ) {
     header("Refresh: 3; url=./musAdmin.php");
     echo "新增成功";
 } else {
