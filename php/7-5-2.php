@@ -12,6 +12,11 @@ if( $_FILES["fileUpload"]["error"] === 0 ) {
     $extension = $arr[ count($arr) - 1 ];
 
     /**
+     * 取得副檔名，還有下面這種寫法：
+     * $extension = pathinfo($_FILES["studentImg"]["name"], PATHINFO_EXTENSION);
+     */
+
+    /**
      * 使用時間函式，定義上傳檔案名稱
      * 用法 -> date("格式化字串")
      * 例如 -> date("Y-m-d H:i:s") -> 2021-12-31 13:14:00
@@ -41,6 +46,6 @@ if( $_FILES["fileUpload"]["error"] === 0 ) {
         echo "檔案大小: ".$_FILES["fileUpload"]["size"]."<br />";
     } else { //檔案移動失敗，則顯示錯誤訊息
         echo "上傳失敗…<br />";
-        echo "<a href='javascript:windows.history.back();'>回上一頁</a>";
+        echo "<a href='javascript:window.history.back();'>回上一頁</a>";
     }
 }

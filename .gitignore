@@ -1,0 +1,9 @@
+# composer
+vendor
+composer.*
+
+# test code
+phpquery.php
+
+# custom
+_tmp_cart/
