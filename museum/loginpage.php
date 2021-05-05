@@ -16,14 +16,14 @@
         }
 
         html {
-            background: #95a5a6;
-            background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_embroidery.png);
+            background: url("./images/1440paint_1001.jpg") no-repeat;
+            background-size: cover;
             font-family: 'Helvetica Neue', Arial, Sans-Serif;}
 
         .login-wrap {
             position: relative;
             margin: 0 auto;
-            background: #ecf0f1;
+            background: lightblue;
             width: 350px;
             border-radius: 5px;
             box-shadow: 3px 3px 10px #333;
@@ -80,7 +80,7 @@
 
 
         button {
-            background: #e74c3c;
+            background: tomato;
             border: none;
             color: white;
             font-size: 18px;
@@ -109,12 +109,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: -webkit-linear-gradient(left,
-                    #27ae60 0%, #27ae60 20%,
-                    #8e44ad 20%, #8e44ad 40%,
-                    #3498db 40%, #3498db 60%,
-                    #e74c3c 60%, #e74c3c 80%,
-                    #f1c40f 80%, #f1c40f 100%);
+            background: tomato; 
             background: -moz-linear-gradient(left,
                     #27ae60 0%, #27ae60 20%,
                     #8e44ad 20%, #8e44ad 40%,
@@ -133,7 +128,7 @@
         <h2>Login</h2>
 
         <form class="form" name="myForm" method="post" action="./login.php">
-            <input type="text" name="username" value="" placeholder="Username" />
+            <input type="text" name="userName" value="" placeholder="Username" />
             <input input type="password" name="pwd" value="" placeholder="Password" />
             <button type="submit" value="登入" href="./login.php"> Sign in </button>
             <a href="#">
