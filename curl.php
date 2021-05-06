@@ -6,6 +6,7 @@ $obj['info'] = '下載失敗';
 
 try{
     //自訂 Request 標頭
+    //
     $headers = [
         'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Content-Type: application/x-www-form-urlencoded; charset=utf-8',
@@ -15,7 +16,7 @@ try{
     //LINE 官方貼圖網址
     $url = 'https://store.line.me/stickershop/product/19461/zh-Hant';
 
-    //設定 cURL
+    //設定 cURL (連線到url設定的網址)
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url); //設定網址
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //若網站導向其它頁面，自動導到正確可讀取的頁面
@@ -32,10 +33,10 @@ try{
 
     //執行正規表達式
     if( preg_match_all($regex, $html, $matches) ){
-        //取得圖片連結
+        //取得圖片連結 $matches[0]存取的是全部擷取出來的內容
         $arrImgUrl = array_values(array_unique($matches[0]));
 
-        //取得圖片編號
+        //取得圖片編號 $matches[0]存取的是group的內容
         $arrImgNum = array_values(array_unique($matches[1]));
 
         //指定圖片下載路徑
@@ -52,6 +53,7 @@ try{
 
         //下載貼圖
         for( $i = 0; $i < count($arrImgUrl); $i++ ){
+            //-o 執行另存新檔
             shell_exec("curl {$arrImgUrl[$i]} -o {$folderPath}\\{$arrImgNum[$i]}.png");
             $count++;
         }
