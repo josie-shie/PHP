@@ -7,20 +7,18 @@ require_once('./db.inc.php');
 $sql = "UPDATE `museum` 
         SET 
         `museumId` = ?, 
-        `museumName` = ?,
-        WHERE `id` = ?";
+        `museumName` = ? ";
 
 //先對其它欄位進行資料繫結設定
 $arrParam = [
     $_POST['museumId'],
-    $_POST['museumName'],
-    (int)$_POST['editId']
+    $_POST['museumName']
 ];
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
-if( $stmt->rowCount() > 0 ){
+if ($stmt->rowCount() > 0) {
     header("Refresh: 3; url=./musAdmin.php");
     echo "更新成功";
 } else {
